@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to bottom right, #ff6f61, #6b66ff);
+            min-height: 100vh;
+            color: white;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            cursor: pointer;
+        }
+
+        .button-container button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #authForm {
+            margin-top: 20px;
+        }
+
+        .hint {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome  {{ username }}</h1>
+    <div class="button-container">
+        <button onclick="scanAttendance()">Scan for Attendance</button>
+    </div>
+
+    <!-- Authentication form -->
+    <h2>Code For Attendance</h2>
+    <form id="authForm" action="/authenticate" method="POST">
+        <input type="text" id="code" name="code" maxlength="4" placeholder="Enter the Code" required>
+        <input type="submit" value="Authenticate">
+    </form>
+
+    <script>
+        function scanAttendance() {
+            // Add code to initiate attendance scanning process
+            alert('Scanning for attendance...');
+        }
+
+        function updateCodeDisplay(code) {
+            document.getElementById('codeDisplay').textContent = "Generated Code: " + code;
+        }
+
+        function fetchNewCode() {
+            fetch('/generate_code')
+            .then(response => response.json())
+            .then(data => {
+                updateCodeDisplay(data.admin_code);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Fetch new code initially and every 20 seconds
+        fetchNewCode();
+        setInterval(fetchNewCode, 20000);
+
+
+    </script>
+</body>
+</html>

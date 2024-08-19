@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Page</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #3498db, #c0392b);
+  }
+
+  .admin-panel {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    background:#2ecc71; /* Gradient background (purple to yellow) */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove default link styling */
+    display: inline-block; /* Make sure the link behaves like a block element */
+  }
+
+  .btn:hover {
+    background: linear-gradient(135deg, #8A2BE2, #FFFF00); /* Darker gradient on hover (purple to yellow) */
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="admin-panel">
+    <h2>Admin Panel</h2>
+    <a href="http://dhira6j.pythonanywhere.com/generate_code" class="btn" target="_blank">Generate Code</a>
+    <a href="https://rajram.pythonanywhere.com/admin" class="btn" target="_blank">Upload Google Form Link</a>
+	<a href="subjects.html" class="btn" target="_blank">View Form & Modify</a>
+    <div id="generatedCode"></div>
+  </div>
+</div>
+</body>
+</html>

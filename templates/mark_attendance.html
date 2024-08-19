@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var authForm = document.getElementById('authForm');
+            authForm.addEventListener('submit', function(event) {
+                var codeInput = document.getElementById('code');
+                var code = codeInput.value.trim();
+                if (code.length !== 6 || !/^[a-zA-Z0-9]+$/.test(code)) {
+                    alert('Please enter a 6-digit alphanumeric code.');
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Welcome to the Index Page</h2>
+    <form id="authForm" action="/authenticate" method="POST">
+        <input type="text" id="code" name="code" maxlength="6">
+        <input type="submit" value="Authenticate">
+    </form>
+</body>
+</html>

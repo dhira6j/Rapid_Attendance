@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Subject</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            color: #333; /* Dark gray text color */
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            background-color: #f44336; /* Red */
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #cc0000; /* Darker red */
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete Subject</h1>
+    <form action="/delete/{{ subject.id }}" method="post">
+        <p>Are you sure you want to delete the subject "{{ subject.name }}"?</p>
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Example</title>
+<style>
+  body {
+    background: linear-gradient(to bottom right, #ff6f61, #6b66ff);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .button.iot {
+    background-color: #4CAF50;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .button.san {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .button.iot:hover, .button.san:hover {
+    background-color: #f8b500;
+    color: #000;
+  }
+</style>
+</head>
+<body>
+
+<a href="https://docs.google.com/forms/d/1rxoqTZsYHcMnOIlsaFGsZQJDBFB44l1dOc9n1B7aYvg/edit#responses" class="button iot">IOT</a>
+<a href="#" class="button san">SAN</a>
+
+</body>
+</html>
